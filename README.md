@@ -1,44 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name - Modeling Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Model | Fashion | Lifestyle</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<?php
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I’m [Your Name], a professional model based in [City]. I specialize in editorial, runway, and commercial work. Explore my portfolio below.</p>
-  </section>
+return [
 
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Modeling shot 1" />
-      <img src="photo2.jpg" alt="Modeling shot 2" />
-      <img src="photo3.jpg" alt="Modeling shot 3" />
-    </div>
-  </section>
+	/*
+	|--------------------------------------------------------------------------
+	| View Storage Paths
+	|--------------------------------------------------------------------------
+	|
+	| Most templating systems load templates from disk. Here you may specify
+	| an array of paths that should be checked for your views. Of course
+	| the usual Laravel view path has already been registered for you.
+	|
+	*/
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@example.com</p>
-    <p>Instagram: @yourhandle</p>
-  </section>
+	'paths' => [
+		realpath(base_path('resources/views')),
+	],
 
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
-</body>
-</html>
+	/*
+	|--------------------------------------------------------------------------
+	| Compiled View Path
+	|--------------------------------------------------------------------------
+	|
+	| This option determines where all the compiled Blade templates will be
+	| stored for your application. Typically, this is within the storage
+	| directory. However, as usual, you are free to change this value.
+	|
+	*/
+
+	'compiled' => realpath(storage_path('framework/views')),
+
+	'routes' => [
+		'home'      => 'Home',
+		'portfolio' => 'Portfolio',
+		// 'links'     => 'Links',
+		'contact'   => 'Contact',
+		'about'     => 'About me'
+	],
+	
+	'adminRoutes' => [
+		'admin.index'	=> 'Dashboard',
+		'photos.index'	=> 'Photos',
+		'folders.index'	=> 'Folders',
+		'slides.index'	=> 'Slides',
+		'links.index'	=> 'Links',
+		'console.index'	=> 'Console',
+	],
+
+];
